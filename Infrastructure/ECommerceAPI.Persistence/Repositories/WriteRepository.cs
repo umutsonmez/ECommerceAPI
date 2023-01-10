@@ -52,10 +52,8 @@ namespace ECommerceAPI.Persistence.Repositories
             return true;
         }
 
-        public Task<int> SaveAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<int> SaveAsync()
+            => await _context.SaveChangesAsync();
 
         public bool Update(T model)
         {
